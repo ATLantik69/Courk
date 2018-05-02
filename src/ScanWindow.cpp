@@ -74,7 +74,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
     {  char key = getch();
        switch(key)
        {
-          case 97:  if(LetterNumber<29)
+          case 97:  if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"A");
@@ -83,7 +83,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 98: if(LetterNumber<29)
+          case 98: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"B");
@@ -92,7 +92,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 99:  if(LetterNumber<29)
+          case 99:  if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);               
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"C");
@@ -101,7 +101,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 100: if(LetterNumber<29)
+          case 100: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"D");
@@ -110,7 +110,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 101: if(LetterNumber<29)
+          case 101: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"E");
@@ -119,7 +119,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 102: if(LetterNumber<29)
+          case 102: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"F");
@@ -128,7 +128,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 103: if(LetterNumber<29)
+          case 103: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"G");
@@ -137,7 +137,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 104: if(LetterNumber<29)
+          case 104: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"H");
@@ -146,7 +146,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 105: if(LetterNumber<29)
+          case 105: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"I");
@@ -155,7 +155,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 106: if(LetterNumber<29)
+          case 106: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"J");
@@ -164,7 +164,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 107: if(LetterNumber<29)
+          case 107: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"K");
@@ -173,7 +173,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 108: if(LetterNumber<29)
+          case 108: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"L");
@@ -182,7 +182,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 109: if(LetterNumber<29)
+          case 109: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"M");
@@ -191,7 +191,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 110: if(LetterNumber<29)
+          case 110: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"N");
@@ -200,7 +200,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 111: if(LetterNumber<29)
+          case 111: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"O");
@@ -209,7 +209,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 112: if(LetterNumber<29)
+          case 112: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"P");
@@ -218,7 +218,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 113: if(LetterNumber<29)
+          case 113: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"Q");
@@ -227,7 +227,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 114: if(LetterNumber<29)
+          case 114: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"R");
@@ -236,7 +236,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 115: if(LetterNumber<29)
+          case 115: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"S");
@@ -245,7 +245,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 116: if(LetterNumber<29)
+          case 116: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"T");
@@ -254,7 +254,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 117: if(LetterNumber<29)
+          case 117: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"U");
@@ -263,7 +263,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 118: if(LetterNumber<29)
+          case 118: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"V");
@@ -272,7 +272,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 119: if(LetterNumber<29)
+          case 119: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"W");
@@ -281,7 +281,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 120: if(LetterNumber<29)
+          case 120: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"X");
@@ -290,7 +290,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 121: if(LetterNumber<29)
+          case 121: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"Y");
@@ -299,7 +299,7 @@ void ScanWindow(int Ox, int Oy, char InputVerbs[3][30])
                        MaxLetterNumber[WordNumber]++;
                     }
                     break;
-          case 122: if(LetterNumber<29)
+          case 122: if(MaxLetterNumber[WordNumber]<29)
                     {
                        getimage(Ox, Oy, Ox + 420, Oy + 14, buf);
                        bar(Ox, Oy, Ox+14, Oy+14); setcolor(WHITE); outtextxy(Ox,Oy,"Z");
