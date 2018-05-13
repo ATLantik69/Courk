@@ -1,3 +1,4 @@
+#include <graphics.h>
 
 int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30])
 {
@@ -7,14 +8,15 @@ int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30])
       {
          if (InputVerbs[i][j] != GeneratedWord[i][j])
          {
+           bar(0,0,800,120);
+           setcolor(WHITE);
            outtextxy(0,150,"Неверно");
-           bar(0, 0, 130, 600);
 		   return 0;
 		 }
 		j++;
 	  }
    }
+   bar(0,0,800,120);
    outtextxy(0,150,"Правильно");
-   bar(0, 0, 800, 600);
    return 1;
 }

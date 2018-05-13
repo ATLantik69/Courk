@@ -13,7 +13,7 @@ void MoveMassive(char *TemporaryMassive[3], int direction, int WordNumber, int L
               j = 0;
               while(TemporaryMassive[WordNumber][LetterNumber + i - j] == ' ')
               {
-                 TemporaryMassive[WordNumber][LetterNumber + i - j] = TemporaryMassive[WordNumber][LetterNumber + i - j + 1] = ' ';
+                 TemporaryMassive[WordNumber][LetterNumber + i - j] = TemporaryMassive[WordNumber][LetterNumber + i - j + 1];
                  TemporaryMassive[WordNumber][LetterNumber + i - j + 1] = ' ';
                  j++;
               }

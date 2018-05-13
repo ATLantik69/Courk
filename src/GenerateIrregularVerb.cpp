@@ -15,7 +15,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
    }
    FILE *SearchVerb;
    SearchVerb=fopen("IrregularVerbs.txt","r");
-   while(1)
+   while (1)
    {
    	  while(StringNumber != GeneratedString)
       {
@@ -23,7 +23,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
          if (ch == '\n')
          StringNumber++;
       }
-      while(WordNumber != 3)
+      while (WordNumber != 3)
       {
          ch = getc(SearchVerb);
          if (ch == ' ')
@@ -39,7 +39,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
 		 }
 	  }
 	  LetterNumber = 0;
-	  while(ch != '\n')
+	  while (ch != '\n')
 	  {
 	     ch = getc(SearchVerb);
 		 GeneratedWord[WordNumber][LetterNumber] = ch;
