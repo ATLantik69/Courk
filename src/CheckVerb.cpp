@@ -17,6 +17,7 @@ int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30])
 	  }
    }
    bar(0,0,800,120);
+   setcolor(WHITE);
    outtextxy(0,150,"Правильно");
    return 1;
 }
