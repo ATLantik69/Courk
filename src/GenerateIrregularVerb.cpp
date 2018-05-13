@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-GenerateIrregularVerb(char GeneratedWord[4][30])
+void GenerateIrregularVerb(char GeneratedWord[4][30])
 {
    srand(time(0));
    int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0;
@@ -48,4 +48,5 @@ GenerateIrregularVerb(char GeneratedWord[4][30])
 	break;
 	}
    fclose(SearchVerb);
+   outtextxy(0,100,GeneratedWord[3]);
 }
