@@ -28,6 +28,7 @@ GenerateIrregularVerb(char GeneratedWord[4][30])
          ch = getc(SearchVerb);
          if (ch == ' ')
          {
+         	GeneratedWord[WordNumber][LetterNumber] = '\0';
             WordNumber++;
             LetterNumber = 0;
 		 }
