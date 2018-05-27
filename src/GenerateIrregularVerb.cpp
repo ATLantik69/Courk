@@ -7,7 +7,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
    srand(time(0));
    int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0;
    int LetterNumber = 0;
-   char ch;
+   char CurrentLetter;
    for (int i = 0; i < 4; i++)
    {
    	  for (int j = 0; j < 30; j++)
@@ -19,14 +19,14 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
    {
    	  while(StringNumber != GeneratedString)
       {
-       	 ch = getc(SearchVerb);
-         if (ch == '\n')
+       	 CurrentLetter = getc(SearchVerb);
+         if (CurrentLetter == '\n')
          StringNumber++;
       }
       while (WordNumber != 3)
       {
-         ch = getc(SearchVerb);
-         if (ch == ' ')
+         CurrentLetter = getc(SearchVerb);
+         if (CurrentLetter == ' ')
          {
          	GeneratedWord[WordNumber][LetterNumber] = '\0';
             WordNumber++;
@@ -34,19 +34,18 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
 		 }
 		 else
 		 {
-		    GeneratedWord[WordNumber][LetterNumber] = ch;
+		    GeneratedWord[WordNumber][LetterNumber] = CurrentLetter;
 		    LetterNumber++;
 		 }
 	  }
 	  LetterNumber = 0;
-	  while (ch != '\n')
+	  while (CurrentLetter != '\n')
 	  {
-	     ch = getc(SearchVerb);
-		 GeneratedWord[WordNumber][LetterNumber] = ch;
+	     CurrentLetter = getc(SearchVerb);
+		 GeneratedWord[WordNumber][LetterNumber] = CurrentLetter;
 		 LetterNumber++;
 	  }
 	break;
 	}
    fclose(SearchVerb);
-   outtextxy(0,100,GeneratedWord[3]);
 }
