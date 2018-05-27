@@ -21,7 +21,8 @@ int main()
        ShowPanel(GeneratedWord, InputVerbs, Score, LeftTime, Answer);
        BeginTimeNote = clock();
        gets(InputString);
-       EndTimeNote = clock() - BeginTimeNote;
+       EndTimeNote = (clock() - BeginTimeNote)/1000;
+       LeftTime -= (int) EndTimeNote;
        IdentifyVerbs(InputString,InputVerbs);
        Answer = CheckVerb(GeneratedWord, InputVerbs);
        Score += AddScore(Answer, Score);
