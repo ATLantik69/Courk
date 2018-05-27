@@ -1,6 +1,7 @@
 #include "GenerateIrregularVerb.c"
 #include "CheckVerb.c"
 #include "ShowPanel.c"
+#include "IdentifyVerbs.c"
 #include <locale.h>
 
 int main()
@@ -14,7 +15,7 @@ int main()
        GenerateIrregularVerb(GeneratedWord);
        ShowPanel(GeneratedWord, InputVerbs, 0, 1, Answer);
        gets(InputString);
-       //IdentifyVerbs(InputString,InputVerbs);
+       IdentifyVerbs(InputString,InputVerbs);
        Answer = CheckVerb(GeneratedWord, InputVerbs);
     }
     system("PAUSE");

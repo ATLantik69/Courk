@@ -14,7 +14,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
    	  GeneratedWord[i][j] = ' ';
    }
    FILE *SearchVerb;
-   SearchVerb=fopen("IrregularVerbs.txt","r");
+   SearchVerb = fopen("IrregularVerbs.txt","r");
    while (1)
    {
    	  while(StringNumber != GeneratedString)
