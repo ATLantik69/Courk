@@ -1,18 +1,17 @@
 
-void ScroreCount(int Answer,int *Score)
+int AddScore(int Answer, int Score)
 {
-	int temp = *Score;
 	if (Answer == 1)
-	temp += 50;
+	return 50;
 	if (Answer == 0)
-	temp -= 350;
-	*Score = temp;
+    return -350;
 }
 
-void TimeLeftCount(int Answer,int *TimeLeft)
+int AddTimeLeft(int Answer,int LeftTime)
 {
-	int temp = *TimeLeft;
 	if (Answer == 1)
-	temp += 6;
-	*TimeLeft = temp;
+	return 6;
+	return 0;
 }
+
+
