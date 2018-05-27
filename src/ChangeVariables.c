@@ -9,4 +9,10 @@ void ScroreCount(int Answer,int *Score)
 	*Score = temp;
 }
 
-
+void TimeLeftCount(int Answer,int *TimeLeft)
+{
+	int temp = *TimeLeft;
+	if (Answer == 1)
+	temp += 6;
+	*TimeLeft = temp;
+}
