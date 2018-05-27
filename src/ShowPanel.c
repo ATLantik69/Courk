@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 
 void ShowPanel(char GeneratedWord[4][30], char InputVerbs[3][30], int Score, int LeftTime, int Answer)
 {

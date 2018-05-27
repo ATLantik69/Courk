@@ -1,4 +1,4 @@
-#include <time.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 void GenerateIrregularVerb(char GeneratedWord[4][30])
