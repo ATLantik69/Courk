@@ -11,9 +11,9 @@ void IdentifyVerbs(char InputString[90], char InputVerb[3][30])
          LetterNumberForString++;
          LetterNumberForVerb++;
 	  }
+	  InputVerb[WordNumber][LetterNumberForVerb] = '\0';
 	  if (InputString[LetterNumberForString] == '\0')
 	  break;
-	  InputVerb[WordNumber][LetterNumberForVerb] = '\0';
 	  LetterNumberForString++;
 	  LetterNumberForVerb = 0;
    }

@@ -10,8 +10,8 @@ int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30])
 		 return 0;
 		j++;
 	  }
-	  if (j == 0)
-	  return 0;
+	  //if (j == 0)
+	  //return 0;
    }
    return 1;
 }

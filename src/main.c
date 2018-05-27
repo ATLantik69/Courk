@@ -6,17 +6,20 @@
 #include <locale.h>
 
 int Score = 0;
-int LeftTime = 60; 
+int LeftTime = 1; 
     
 int main()
 {
-    int Answer = 1; // слово ещё не введено
+    int Answer = -1; // слово ещё не введено
     float BeginTimeNote, EndTimeNote;
     char InputString[90];
+    char Nickname[20];
     char InputVerbs[3][30], GeneratedWord[4][30];
     setlocale(LC_ALL, "Rus");
-    while(1)
+    while(LeftTime > 0)
     {
+       Score += AddScore(Answer, Score);
+       LeftTime += AddTimeLeft(Answer, LeftTime);
        GenerateIrregularVerb(GeneratedWord);
        ShowPanel(GeneratedWord, InputVerbs, Score, LeftTime, Answer);
        BeginTimeNote = clock();
@@ -25,9 +28,16 @@ int main()
        LeftTime -= (int) EndTimeNote;
        IdentifyVerbs(InputString,InputVerbs);
        Answer = CheckVerb(GeneratedWord, InputVerbs);
-       Score += AddScore(Answer, Score);
-       LeftTime += AddTimeLeft(Answer, LeftTime);
     }
+    printf("Время вышло!\nВведите ваше имя: ");
+    GotoMarkEnterNickname:
+    scanf("%s",Nickname);
+    if strlen(Nickname) > 20
+    {
+       printf("Имя не должно превышать 20 символов\n");
+       goto GotoMarkEnterNickname;
+	}
+    printf("%s",Nickname);
     system("PAUSE");
     return 1;    
 }

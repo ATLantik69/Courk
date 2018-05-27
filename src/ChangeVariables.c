@@ -5,6 +5,7 @@ int AddScore(int Answer, int Score)
 	return 50;
 	if (Answer == 0)
     return -350;
+    return 0;
 }
 
 int AddTimeLeft(int Answer,int LeftTime)
