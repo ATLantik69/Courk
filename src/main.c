@@ -6,12 +6,14 @@ int main()
 {
    int Escape = 0, PressedKey;
    setlocale(LC_ALL, "Rus");
-   printf("1. Начать проверку\n");
-   printf("2. Таблица лидеров\n");
-   printf("3. Опции\n");
-   printf("4. Выход\n");
    while(!Escape)
    {
+      system("cls");
+      printf("1. Начать проверку\n");
+      printf("2. Таблица лидеров\n");
+      printf("3. Опции\n");
+      printf("4. Выход\n");
+      SkipRewritingMenu:
       scanf("%d",&PressedKey);
       switch(PressedKey)
       {
@@ -24,6 +26,7 @@ int main()
          case 4: Escape = 1;
                  break;
          default: printf("Неверная команда\n");
+                  goto SkipRewritingMenu;
 	  }
    }
 }

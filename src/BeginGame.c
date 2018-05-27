@@ -1,5 +1,5 @@
 
-int BeginGame()
+void BeginGame()
 {
     int Answer = -1; // слово ещё не введено
     float BeginTimeNote, EndTimeNote;
@@ -30,7 +30,5 @@ int BeginGame()
        printf("Имя не должно превышать 20 символов\n");
        goto GotoMarkEnterNickname;
 	}
-    printf("%s",Nickname);
-    system("PAUSE");
-    return 1;    
+    AddNicknameToTable(Nickname, Score);    
 }
