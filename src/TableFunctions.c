@@ -3,8 +3,6 @@
 #include <string.h>
 #include "Functions.h"
 
-struct GeneralPlayer {char StructNickname[20]; int StructScore;} Player;
-
 void AddNicknameToTable(char Nickname[20], int Score)
 {
    strcpy(Player.StructNickname, Nickname);
@@ -32,7 +30,7 @@ void ShowTable()
    system("PAUSE");
 }
 
-int SortTable(struct GeneralPlayer PlayersMassive[10])
+int SortTable(struct GeneralPlayer *PlayersMassive)
 {
    FILE *Table = fopen("Table.dat","rb");
    if (!Table)
