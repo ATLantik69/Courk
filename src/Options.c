@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "Functions.h"
 
 void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *AmountInputVerbs)
 {
