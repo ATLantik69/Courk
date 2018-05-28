@@ -4,8 +4,8 @@
 
 int main()
 {
-   int Escape = 0, PressedKey;
-   int LeftTime = 15, TimeBonus = 6;
+   int Escape = 0, PressedKey, StandardGameMode = 0;
+   int LeftTime = 15, TimeBonus = 6, AmountInputVerbs = 1;
    setlocale(LC_ALL, "Rus");
    while(!Escape)
    {
@@ -22,7 +22,7 @@ int main()
                  break;
          case 2: ShowTable();
                  break;
-         case 3: ShowOptions(&LeftTime, &TimeBonus);
+         case 3: ShowOptions(&LeftTime, &TimeBonus, &StandardGameMode, &AmountInputVerbs);
                  break;
          case 4: Escape = 1;
                  break;
