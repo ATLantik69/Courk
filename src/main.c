@@ -32,4 +32,5 @@ int main()
                   goto SkipRewritingMenu;
 	  }
    }
+   return 1;
 }
