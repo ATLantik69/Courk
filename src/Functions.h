@@ -9,6 +9,6 @@ void IdentifyVerbs(char InputString[90], char InputVerb[3][30]);
 void ShowPanel(char GeneratedWord[4][30], char InputVerbs[3][30], int Score, int LeftTime, int Answer);
 void AddNicknameToTable(char Nickname[20],int Score);
 void ShowTable();
-void SortTable();
+void SortTable(struct GeneralPlayer PlayersMassive[10]);
 
 #endif
