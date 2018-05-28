@@ -10,3 +10,9 @@ void ShowPanel(char GeneratedVerbs[4][30], int Score, int LeftTime, int Answer)
 	if (Answer == 0) printf("Неправильным\n");
 	printf("\n%s\n",GeneratedVerbs[3]);
 }
+
+/*void ShowPanelForTimeMode(char GeneratedVerbs[3][4][30])
+{
+	system("cls");
+	printf("%s\n",GeneratedVerbs[3]);
+}*/

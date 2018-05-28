@@ -7,7 +7,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 int AddScore(int Answer, int Score);
 int AddTimeLeft(int Answer,int LeftTime, int TimeBonus);
 int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30]);
-void ShowPanel(char GeneratedWord[4][30], int Score, int LeftTime, int Answer);
+void ShowPanele(char GeneratedWord[4][30], int Score, int LeftTime, int Answer);
 void AddNicknameToTable(char Nickname[20],int Score);
 void ShowTable();
 int SortTable(struct GeneralPlayer *PlayersMassive);

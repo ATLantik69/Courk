@@ -6,7 +6,7 @@ CFLAGS  = -Wall -Werror
 default: bin/IrregularVerbs
 
 bin/IrregularVerbs: build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o bin
-	$(CC) $(CFLAGS) build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/chessvizual
+	$(CC) $(CFLAGS) build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/IrregularVerbs
 
 build/main.o: src/main.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/main.c -o build/main.o
