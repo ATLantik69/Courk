@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <string.h> 
 #include "Functions.h"
 
@@ -9,20 +10,19 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
     float BeginTimeNote, EndTimeNote;
     char Nickname[20];
     int Score = 0; 
-    char InputString[90];
-    gets(InputString); // холостое срабатываение, чтобы цифра из меню не принималась за InputString
+    int CurrentVerb; // для цикла
     char InputVerbs[3][30], GeneratedVerbs[4][30];
     while(LeftTime > 0)
     {
        Score += AddScore(Answer, Score);
        LeftTime += AddTimeLeft(Answer, LeftTime, TimeBonus);
        GenerateIrregularVerb(GeneratedVerbs);
-       ShowPanel(GeneratedVerbs, InputVerbs, Score, LeftTime, Answer);
+       ShowPanel(GeneratedVerbs, Score, LeftTime, Answer);
        BeginTimeNote = clock();
-       gets(InputString);
+       for (CurrentVerb = 0; CurrentVerb < 3; CurrentVerb++)
+       scanf("%s",InputVerbs[CurrentVerb]);
        EndTimeNote = (clock() - BeginTimeNote)/1000;
        LeftTime -= (int) EndTimeNote;
-       IdentifyVerbs(InputString,InputVerbs);
        Answer = CheckVerb(GeneratedVerbs, InputVerbs);
     }
     printf("Время вышло!\nВведите ваше имя: ");
@@ -33,6 +33,5 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
        printf("Имя не должно превышать 20 символов\n");
        goto MarkEnterNickname;
 	}
-    AddNicknameToTable(Nickname, Score);
-	gets(InputString); // холостое срабатываение, чтобы цифра из ника не принималась за команду в меню    
+    AddNicknameToTable(Nickname, Score); 
 }

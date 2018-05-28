@@ -1,5 +1,5 @@
 
-void ShowPanel(char GeneratedVerbs[4][30], char InputVerbs[3][30], int Score, int LeftTime, int Answer)
+void ShowPanel(char GeneratedVerbs[4][30], int Score, int LeftTime, int Answer)
 {
 	system("cls");
 	printf(" Очки   Осталось времени   Последнее слово было\n");
