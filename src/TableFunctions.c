@@ -17,16 +17,23 @@ void ShowTable()
    struct GeneralPlayer PlayersMassive[10];
    system("CLS");
    int PlayersAmount = SortTable(PlayersMassive);
-   printf("номер позиции    Очки        Имя\n");
-   for(; PositionNumber < PlayersAmount; PositionNumber++)
-   printf("\n   %3d         %5d        %s",PositionNumber + 1 , PlayersMassive[PositionNumber].StructScore, PlayersMassive[PositionNumber].StructNickname);
-   printf("\n\n");
+   if (PlayersAmount == -1)
+   printf("Ещё не было ни одной игры\n\n");
+   else
+   {
+      printf("номер позиции    Очки        Имя\n");
+      for(; PositionNumber < PlayersAmount; PositionNumber++)
+      printf("\n   %3d         %5d        %s",PositionNumber + 1 , PlayersMassive[PositionNumber].StructScore, PlayersMassive[PositionNumber].StructNickname);
+      printf("\n\n");
+   }
    system("PAUSE");
 }
 
 int SortTable(struct GeneralPlayer PlayersMassive[10])
 {
    FILE *Table = fopen("Table.dat","rb");
+   if (!Table)
+   return -1;
    int PlayersAmount = 0, MaxPlayers = 0;
    fread(&Player, sizeof(Player), 1, Table);
    while (!feof(Table))
