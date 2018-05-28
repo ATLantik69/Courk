@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *AmountInputVerbs)
 {
@@ -51,7 +52,7 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
    }
 }
 
-void ChooseTime(int *LeftTime)
+int ChooseTime(int *LeftTime)
 {
    system("cls");
    printf("Выберите время\n");
@@ -73,10 +74,11 @@ void ChooseTime(int *LeftTime)
       case 4: break;
       default: printf("Неверная команда\n");
                goto SkipRewritingOptionsForLeftTime;
-	  }
+	}
+	return 1;
 }
 
-void ChooseBonusTime(int *TimeBonus)
+int ChooseBonusTime(int *TimeBonus)
 {
    system("cls");
    printf("Выберите бонуснов время\n");
@@ -98,10 +100,11 @@ void ChooseBonusTime(int *TimeBonus)
       case 4: break;
       default: printf("Неверная команда\n");
                goto SkipRewritingOptionsForBonusTime;
-	  }
+	}
+	return 1;  
 }
 
-void ChooseAmountInputVerbs(int *AmountInputVerbs)
+int ChooseAmountInputVerbs(int *AmountInputVerbs)
 {
    system("cls");
    printf("Выберите количество выводимых за раз глаголов\n");
@@ -123,5 +126,6 @@ void ChooseAmountInputVerbs(int *AmountInputVerbs)
       case 4: break;
       default: printf("Неверная команда\n");
                goto SkipRewritingOptionsForChooseAmountInputVerbs;
-	  }
+	}
+	return 1; 
 }

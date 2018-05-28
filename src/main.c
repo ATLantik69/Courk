@@ -1,5 +1,7 @@
 #include <locale.h>
 #include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "Functions.h"
 
 int main()
