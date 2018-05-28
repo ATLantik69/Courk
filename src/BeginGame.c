@@ -1,5 +1,5 @@
 
-void BeginGame(int LeftTime, int TimeBonus)
+void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode)
 {
     int Answer = -1; // слово ещё не введено
     float BeginTimeNote, EndTimeNote;
@@ -7,19 +7,19 @@ void BeginGame(int LeftTime, int TimeBonus)
     int Score = 0; 
     char InputString[90];
     gets(InputString); // холостое срабатываение, чтобы цифра из меню не принималась за InputString
-    char InputVerbs[3][30], GeneratedWord[4][30];
+    char InputVerbs[3][30], GeneratedVerbs[4][30];
     while(LeftTime > 0)
     {
        Score += AddScore(Answer, Score);
        LeftTime += AddTimeLeft(Answer, LeftTime, TimeBonus);
-       GenerateIrregularVerb(GeneratedWord);
-       ShowPanel(GeneratedWord, InputVerbs, Score, LeftTime, Answer);
+       GenerateIrregularVerb(GeneratedVerbs);
+       ShowPanel(GeneratedVerbs, InputVerbs, Score, LeftTime, Answer);
        BeginTimeNote = clock();
        gets(InputString);
        EndTimeNote = (clock() - BeginTimeNote)/1000;
        LeftTime -= (int) EndTimeNote;
        IdentifyVerbs(InputString,InputVerbs);
-       Answer = CheckVerb(GeneratedWord, InputVerbs);
+       Answer = CheckVerb(GeneratedVerbs, InputVerbs);
     }
     printf("Время вышло!\nВведите ваше имя: ");
     MarkEnterNickname:

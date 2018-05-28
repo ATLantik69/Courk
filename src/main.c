@@ -18,7 +18,7 @@ int main()
       scanf("%d",&PressedKey);
       switch(PressedKey)
       {
-         case 1: BeginGame(LeftTime, TimeBonus);
+         case 1: BeginGame(LeftTime, TimeBonus, AmountInputVerbs, StandardGameMode);
                  break;
          case 2: ShowTable();
                  break;

@@ -1,7 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-int BeginGame(int LeftTime, int TimeBonus);
+void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode);
 int AddScore(int Answer, int Score);
 int AddTimeLeft(int Answer,int LeftTime, int TimeBonus);
 int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30]);
@@ -9,8 +9,10 @@ void IdentifyVerbs(char InputString[90], char InputVerb[3][30]);
 void ShowPanel(char GeneratedWord[4][30], char InputVerbs[3][30], int Score, int LeftTime, int Answer);
 void AddNicknameToTable(char Nickname[20],int Score);
 void ShowTable();
-void SortTable(struct GeneralPlayer *PlayersMassive);
+int SortTable(struct GeneralPlayer *PlayersMassive);
+void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *AmountInputVerbs);
 void ChooseBonusTime(int *TimeBonus);
 void ChooseTime(int *LeftTime);
+void ChooseAmountInputVerbs(int *AmountInputVerbs);
 
 #endif

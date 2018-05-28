@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void GenerateIrregularVerb(char GeneratedWord[4][30])
+void GenerateIrregularVerb(char GeneratedVerbs[4][30])
 {
    int i, j; // переменные для циклов
    srand(time(0));
@@ -11,7 +11,7 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
    for (i = 0; i < 4; i++)
    {
    	  for (j = 0; j < 30; j++)
-   	  GeneratedWord[i][j] = ' ';
+   	  GeneratedVerbs[i][j] = ' ';
    }
    FILE *SearchVerb;
    SearchVerb = fopen("IrregularVerbs.txt","r");
@@ -28,13 +28,13 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
          CurrentLetter = getc(SearchVerb);
          if (CurrentLetter == ' ')
          {
-         	GeneratedWord[WordNumber][LetterNumber] = '\0';
+         	GeneratedVerbs[WordNumber][LetterNumber] = '\0';
             WordNumber++;
             LetterNumber = 0;
 		 }
 		 else
 		 {
-		    GeneratedWord[WordNumber][LetterNumber] = CurrentLetter;
+		    GeneratedVerbs[WordNumber][LetterNumber] = CurrentLetter;
 		    LetterNumber++;
 		 }
 	  }
@@ -42,10 +42,10 @@ void GenerateIrregularVerb(char GeneratedWord[4][30])
 	  while (CurrentLetter != '\n')
 	  {
 	     CurrentLetter = getc(SearchVerb);
-		 GeneratedWord[WordNumber][LetterNumber] = CurrentLetter;
+		 GeneratedVerbs[WordNumber][LetterNumber] = CurrentLetter;
 		 LetterNumber++;
 	  }
-	  GeneratedWord[WordNumber][LetterNumber] = '\0';
+	  GeneratedVerbs[WordNumber][LetterNumber] = '\0';
 	break;
 	}
    fclose(SearchVerb);
