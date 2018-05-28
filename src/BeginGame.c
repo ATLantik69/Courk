@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h> 
+#include "Functions.h"
 
 void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode)
 {
