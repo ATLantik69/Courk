@@ -14,7 +14,7 @@ build/main.o: src/main.c src/Functions.h build
 build/BeginGame.o: src/BeginGame.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/BeginGame.c -o build/BeginGame.o
 
-build/CheckVerb.o: src/CheckVerb.c src/CheckVerb.h build
+build/CheckVerb.o: src/CheckVerb.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/CheckVerb.c -o build/CheckVerb.o
 
 build/ChangeVariables.o: src/ChangeVariables.c src/Functions.h build
