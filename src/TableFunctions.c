@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "Functions.h"
 
 struct GeneralPlayer {char StructNickname[20]; int StructScore;} Player;
 
