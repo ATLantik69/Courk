@@ -8,10 +8,10 @@ int AddScore(int Answer, int Score)
     return 0;
 }
 
-int AddTimeLeft(int Answer,int LeftTime)
+int AddTimeLeft(int Answer,int LeftTime, int TimeBonus)
 {
 	if (Answer == 1)
-	return 6;
+	return TimeBonus;
 	return 0;
 }
 
