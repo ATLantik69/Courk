@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct GeneralPlayer {char StructNickname[20]; int StructScore;} Player;
 
