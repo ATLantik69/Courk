@@ -1,6 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+struct GeneralPlayer {char StructNickname[20]; int StructScore;} Player;
 void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode);
 int AddScore(int Answer, int Score);
 int AddTimeLeft(int Answer,int LeftTime, int TimeBonus);
