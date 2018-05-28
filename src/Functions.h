@@ -12,8 +12,8 @@ void AddNicknameToTable(char Nickname[20],int Score);
 void ShowTable();
 int SortTable(struct GeneralPlayer *PlayersMassive);
 void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *AmountInputVerbs);
-void ChooseBonusTime(int *TimeBonus);
-void ChooseTime(int *LeftTime);
-void ChooseAmountInputVerbs(int *AmountInputVerbs);
+int ChooseBonusTime(int *TimeBonus);
+int ChooseTime(int *LeftTime);
+int ChooseAmountInputVerbs(int *AmountInputVerbs);
 
 #endif
