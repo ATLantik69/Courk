@@ -27,14 +27,21 @@ void ShowTable()
 int SortTable(struct GeneralPlayer PlayersMassive[10])
 {
    FILE *Table = fopen("Table.dat","rb");
-   int PlayersAmount = 0;
+   int PlayersAmount = 0, MaxPlayers = 0;
    fread(&Player, sizeof(Player), 1, Table);
-   while (!feof(Table) && PlayersAmount < 10)
+   while (!feof(Table))
    { 
       PlayersMassive[PlayersAmount] = Player;
       fread(&Player, sizeof(Player), 1, Table);
       PlayersAmount++;
+      if (PlayersAmount == 10)
+      {
+         PlayersAmount = 0;
+         MaxPlayers = 1;
+	  }
    }
+   if (MaxPlayers)
+   PlayersAmount = 10;
    struct GeneralPlayer CurrentPlayer;
    int j, i = 1; // переменные для цикла
    for (; i < PlayersAmount; i++) //Insert сортрировка
