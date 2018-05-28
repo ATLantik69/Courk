@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 void GenerateIrregularVerb(char GeneratedVerbs[4][30])
 {
