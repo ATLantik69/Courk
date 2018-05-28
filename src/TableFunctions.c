@@ -13,18 +13,42 @@ void AddNicknameToTable(char Nickname[20], int Score)
 
 void ShowTable()
 { 
-   int i = 1;
+   int PositionNumber = 0;
+   struct GeneralPlayer PlayersMassive[10];
    system("CLS");
-   FILE *Table = fopen("Table.dat","rb");
-   fread(&Player, sizeof(Player), 1, Table);
+   int PlayersAmount = SortTable(PlayersMassive);
    printf("номер позиции    Очки        Имя\n");
-   while (!feof(Table) && i < 11)
-   { 
-      printf("\n   %3d         %5d        %s",i , Player.StructScore, Player.StructNickname);
-      fread(&Player, sizeof(Player), 1, Table);
-      i++;
-   }
+   for(; PositionNumber < PlayersAmount; PositionNumber++)
+   printf("\n   %3d         %5d        %s",PositionNumber + 1 , PlayersMassive[PositionNumber].StructScore, PlayersMassive[PositionNumber].StructNickname);
    printf("\n\n");
    system("PAUSE");
+}
+
+int SortTable(struct GeneralPlayer PlayersMassive[10])
+{
+   FILE *Table = fopen("Table.dat","rb");
+   int PlayersAmount = 0;
+   fread(&Player, sizeof(Player), 1, Table);
+   while (!feof(Table) && PlayersAmount < 10)
+   { 
+      PlayersMassive[PlayersAmount] = Player;
+      fread(&Player, sizeof(Player), 1, Table);
+      PlayersAmount++;
+   }
+   struct GeneralPlayer CurrentPlayer;
+   int j, i = 1; // переменные для цикла
+   for (; i < PlayersAmount; i++) //Insert сортрировка
+   {
+      CurrentPlayer = PlayersMassive[i]; 
+      j = i - 1;
+      while ((j >= 0) && (CurrentPlayer.StructScore > PlayersMassive[j].StructScore))
+      {
+         PlayersMassive[j + 1] = PlayersMassive[j];
+         j = j - 1;
+      }
+      PlayersMassive[j + 1] = CurrentPlayer;
+   }
+   fclose(Table);
+   return PlayersAmount;
 }
 

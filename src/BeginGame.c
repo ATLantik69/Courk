@@ -7,7 +7,7 @@ void BeginGame()
     int Score = 0;
     int LeftTime = 15; 
     char InputString[90];
-    gets(InputString); // холостое срабатываение
+    gets(InputString); // холостое срабатываение, чтобы цифра из меню не принималась за InputString
     char InputVerbs[3][30], GeneratedWord[4][30];
     while(LeftTime > 0)
     {
@@ -23,12 +23,12 @@ void BeginGame()
        Answer = CheckVerb(GeneratedWord, InputVerbs);
     }
     printf("Время вышло!\nВведите ваше имя: ");
-    GotoMarkEnterNickname:
+    MarkEnterNickname:
     scanf("%s",Nickname);
     if (strlen(Nickname) > 20)
     {
        printf("Имя не должно превышать 20 символов\n");
-       goto GotoMarkEnterNickname;
+       goto MarkEnterNickname;
 	}
     AddNicknameToTable(Nickname, Score);    
 }
