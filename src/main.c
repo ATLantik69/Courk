@@ -19,7 +19,7 @@ int main()
       {
          case 1: BeginGame();
                  break;
-         case 2: //ShowTable();
+         case 2: ShowTable();
                  break;
          case 3: //ShowOptions();
                  break;
