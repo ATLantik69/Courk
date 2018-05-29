@@ -6,7 +6,7 @@
 
 void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode)
 {
-   int Answer = -1, i; // Word haven't been entered
+   int Answer = -1; // Word haven't been entered
    float BeginTimeNote, EndTimeNote;
    char Nickname[40];
    int Score = 0; 
@@ -30,7 +30,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 		 }
          EndTimeNote = (clock() - BeginTimeNote)/1000;
          LeftTime -= (int) EndTimeNote;
-         Answer = CheckVerb(GeneratedVerbs[0], InputVerbs);
+         Answer = CheckVerb(GeneratedVerbs[0], InputVerbs[0]);
       }
       printf("Time is up!\nEnter your name: ");
       MarkEnterNickname:
