@@ -1,4 +1,3 @@
-#include <locale.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,7 +10,6 @@ int main()
 	int Tests = 0;
 	char InputVerbs[3][3][60];
 	char Nickname[40];
-	setlocale(LC_ALL, "Rus");
 	while(!Escape)
 	{
 		system("reset");

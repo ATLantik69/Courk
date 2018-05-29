@@ -8,7 +8,6 @@
 int Tests = 1, PressedKey = 4, StandardGameMode = 0;
 int LeftTime = 17, TimeBonus = 13, AmountInputVerbs = 7;
 int result, expecting;
-char ResultForChar[40];
 
 CTEST (OptionsGameMode, ChangeMod) //Check game mode changing
 {
@@ -327,6 +326,7 @@ CTEST (LeadersTable, CheckTableSort) //Check players sorting and taking last ten
 	expecting = -1000;
 	ASSERT_EQUAL(expecting, result);
 	char ExpectingForChar[40];
+	char ResultForChar[40];
 	strcpy(ResultForChar, PlayersMassive[0].StructNickname);
 	strcpy(ExpectingForChar, "EEE");
 	ASSERT_STR(ExpectingForChar, ResultForChar);
@@ -364,6 +364,101 @@ CTEST (GenerateVerb, CheckGeneration) //Check return statement then table isn't 
 	strcpy(ExpectingForChar[3], "vidavat'_zamuj\n");
 	for (i = 0; i < 4; i++)
 	ASSERT_STR(ExpectingForChar[i],ResultForChar[i]);
+}
+
+CTEST (EnterNickname, IncorrectInput) //Check return of EnterNickname in case there were too much symbols
+{
+	char TestNickname[40];
+	strcpy(TestNickname, "012345678901234567890");
+	result = EnterNickname(TestNickname, Tests);
+	expecting = 0;
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (EnterNickname, CorrectInput) //Check return of EnterNickname in case input was correct
+{
+	char TestNickname[40];
+	strcpy(TestNickname, "0123456789");
+	result = EnterNickname(TestNickname, Tests);
+	expecting = 1;
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (BeginGame, EscapeFromTimeMode) //Check command escape from different mods
+{
+	StandardGameMode = 0;
+	char InputVerbs[3][3][60];
+	strcpy(InputVerbs[0][0], "esc");
+	expecting = 2;
+	result = BeginGame(LeftTime, TimeBonus, AmountInputVerbs, StandardGameMode, Tests, InputVerbs, 0);
+	ASSERT_EQUAL(expecting,result);
+	StandardGameMode = 1;
+	result = BeginGame(LeftTime, TimeBonus, AmountInputVerbs, StandardGameMode, Tests, InputVerbs, 0);
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (BeginGame, TimeIsUp) //Check end after time is up
+{
+	StandardGameMode = 0;
+	LeftTime = 0;
+	expecting = 1;
+	result = BeginGame(LeftTime, TimeBonus, AmountInputVerbs, StandardGameMode, Tests, 0, 0);
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (CheckVerb, CorrectVerb) //Check return then verb is correct
+{
+	char GeneratedWord[4][60];
+	char InputVerbs[3][60];
+	int i; //for cycle
+	for (i = 0; i < 3; i++)
+	{
+		strcpy(InputVerbs[i], "aaa");
+		strcpy(GeneratedWord[i], "aaa");
+	}
+	result = CheckVerb(GeneratedWord, InputVerbs);
+	expecting = 1;
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (CheckVerb, InCorrectVerb) //Check return then verb is not correct
+{
+	char GeneratedWord[4][60];
+	char InputVerbs[3][60];
+	int i; //for cycle
+	for (i = 0; i < 3; i++)
+	{
+		strcpy(InputVerbs[i], "aaa");
+		strcpy(GeneratedWord[i], "aaa");
+	}
+	InputVerbs[2][1] = 'k';
+	result = CheckVerb(GeneratedWord, InputVerbs);
+	expecting = 0;
+	ASSERT_EQUAL(expecting,result);
+}
+
+CTEST (ChangeVariables, CorrectChange) //Check return Value from functions in ChangeVariables
+{
+	int Answer;
+	TimeBonus = 10;
+	Answer = 1;
+	result = AddScore(Answer);
+	expecting = 50;
+	ASSERT_EQUAL(expecting,result);
+	result = AddTimeLeft(Answer, TimeBonus);
+	expecting = TimeBonus;
+	ASSERT_EQUAL(expecting,result);
+	Answer = 0;
+	result = AddScore(Answer);
+	expecting = -350;
+	ASSERT_EQUAL(expecting,result);
+	result = AddTimeLeft(Answer, TimeBonus);
+	expecting = 0;
+	ASSERT_EQUAL(expecting,result);
+	Answer = -1;
+	result = AddScore(Answer);
+	expecting = 0;
+	ASSERT_EQUAL(expecting,result);
 }
 
 int main(int argc, const char** argv) 
