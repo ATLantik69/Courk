@@ -1,5 +1,7 @@
 #define CTEST_MAIN
 
+#include <string.h>
+#include <stdio.h> 
 #include "Functions.h"
 #include "ctest.h"
 
@@ -331,6 +333,37 @@ CTEST (LeadersTable, CheckTableSort) //Check players sorting and taking last ten
 	strcpy(ResultForChar, PlayersMassive[9].StructNickname);
 	strcpy(ExpectingForChar, "HHH");
 	ASSERT_STR(ExpectingForChar, ResultForChar);
+}
+
+CTEST (GenerateVerb, CheckGeneration) //Check return statement then table isn't created
+{
+	char ExpectingForChar[4][60];
+	char ResultForChar[4][60];
+	int ChosenVerb = 0;
+	int i; // for cycle
+	GenerateIrregularVerb(ResultForChar, Tests, ChosenVerb);
+	strcpy(ExpectingForChar[0], "abide");
+	strcpy(ExpectingForChar[1], "abode/abided");
+	strcpy(ExpectingForChar[2], "abode/abided");
+	strcpy(ExpectingForChar[3], "prebivat'\n");
+	for (i = 0; i < 4; i++)
+	ASSERT_STR(ExpectingForChar[i],ResultForChar[i]);
+	ChosenVerb = 292;
+	GenerateIrregularVerb(ResultForChar, Tests, ChosenVerb);
+	strcpy(ExpectingForChar[0], "write");
+	strcpy(ExpectingForChar[1], "wrote");
+	strcpy(ExpectingForChar[2], "written");
+	strcpy(ExpectingForChar[3], "pisat'\n");
+	for (i = 0; i < 4; i++)
+	ASSERT_STR(ExpectingForChar[i],ResultForChar[i]);
+	ChosenVerb = 282;
+	GenerateIrregularVerb(ResultForChar, Tests, ChosenVerb);
+	strcpy(ExpectingForChar[0], "wed");
+	strcpy(ExpectingForChar[1], "wed/wedded");
+	strcpy(ExpectingForChar[2], "wed/wedded");
+	strcpy(ExpectingForChar[3], "vidavat'_zamuj\n");
+	for (i = 0; i < 4; i++)
+	ASSERT_STR(ExpectingForChar[i],ResultForChar[i]);
 }
 
 int main(int argc, const char** argv) 

@@ -10,6 +10,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 	srand(time(0));
 	float BeginTimeNote, EndTimeNote;
 	int Score = 0; 
+	int ChosenVerb = 0; // Required for tests
 	int CurrentVerb; // For cycles, Verb is for three forms of verbs
 	int CurrentWord; // For cycles, Word is for one verb
 	char GeneratedVerbs[3][4][60];
@@ -19,7 +20,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 		{
 			Score += AddScore(Answer, Score);
 			LeftTime += AddTimeLeft(Answer, LeftTime, TimeBonus);
-			GenerateIrregularVerb(GeneratedVerbs[0]);
+			GenerateIrregularVerb(GeneratedVerbs[0], Tests, ChosenVerb);
 			if (!Tests)
 			ShowPanelForTimeMode(GeneratedVerbs[0], Score, LeftTime, Answer);
 			BeginTimeNote = clock();
@@ -47,7 +48,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 		while(Answer != 0)
 		{
 			for (CurrentVerb = 0; CurrentVerb < AmountInputVerbs; CurrentVerb++)
-			GenerateIrregularVerb(GeneratedVerbs[CurrentVerb]);
+			GenerateIrregularVerb(GeneratedVerbs[CurrentVerb], Tests, ChosenVerb);
 			if (!Tests)
 			ShowPanelForStandardMode(GeneratedVerbs, AmountInputVerbs);
 			for (CurrentVerb = 0; CurrentVerb < AmountInputVerbs; CurrentVerb++)

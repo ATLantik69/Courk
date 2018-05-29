@@ -2,10 +2,14 @@
 #include <stdio.h>
 #include <time.h>
 
-void GenerateIrregularVerb(char GeneratedVerbs[4][60])
+void GenerateIrregularVerb(char GeneratedVerbs[4][60], int Tests, int ChosenVerb)
 {
 	int i, j; // Variables for cycle
-	int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0; // 5 - amount of verbs in .txt file
+	int GeneratedString, StringNumber = 0, WordNumber = 0;
+	if (!Tests)
+	GeneratedString = rand()%293; // 293 - amount of verbs in .txt file + 1
+	else 
+	GeneratedString = ChosenVerb;
 	int LetterNumber = 0;
 	char CurrentLetter;
 	for (i = 0; i < 4; i++)

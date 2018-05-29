@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 struct GeneralPlayer {char StructNickname[40]; int StructScore;} Player;
-void GenerateIrregularVerb(char GeneratedVerbs[4][60]);
+void GenerateIrregularVerb(char GeneratedVerbs[4][60], int Tests, int ChosenVerb);
 void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode, int Tests, char InputVerbs[3][3][60], char Nickname[40]);
 int AddScore(int Answer, int Score);
 int AddTimeLeft(int Answer,int LeftTime, int TimeBonus);
