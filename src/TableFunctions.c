@@ -19,10 +19,10 @@ void ShowTable()
    system("CLS");
    int PlayersAmount = SortTable(PlayersMassive);
    if (PlayersAmount == -1)
-   printf("Ещё не было ни одной игры\n\n");
+   printf("There were no games\n\n");
    else
    {
-      printf("номер позиции    Очки        Имя\n");
+      printf("Position number    Score        Name\n");
       for(; PositionNumber < PlayersAmount; PositionNumber++)
       printf("\n   %3d         %5d        %s",PositionNumber + 1 , PlayersMassive[PositionNumber].StructScore, PlayersMassive[PositionNumber].StructNickname);
       printf("\n\n");
@@ -51,8 +51,8 @@ int SortTable(struct GeneralPlayer *PlayersMassive)
    if (MaxPlayers)
    PlayersAmount = 10;
    struct GeneralPlayer CurrentPlayer;
-   int j, i = 1; // переменные для цикла
-   for (; i < PlayersAmount; i++) //Insert сортрировка
+   int j, i = 1; // Variables for cycle
+   for (; i < PlayersAmount; i++) //Insertsort
    {
       CurrentPlayer = PlayersMassive[i]; 
       j = i - 1;

@@ -4,15 +4,18 @@
 void ShowPanelForTimeMode(char GeneratedVerbs[4][60], int Score, int LeftTime, int Answer)
 {
 	system("cls");
-	printf(" Очки   Осталось времени   Последнее слово было\n");
+	printf(" Score   Time left   Status of last word\n");
 	printf("%5.0d          %2.0d               ",Score,LeftTime);
-	if (Answer == 1) printf("Правильным\n");
-	if (Answer == 0) printf("Неправильным\n");
+	if (Answer == 1) printf("Correct\n");
+	if (Answer == 0) printf("Incorrect\n");
 	printf("\n%s\n",GeneratedVerbs[3]);
 }
 
-/*void ShowPanelForTimeMode(char GeneratedVerbs[3][4][30])
+void ShowPanelForStandardMode(char GeneratedVerbs[3][4][60], int AmountInputVerbs)
 {
 	system("cls");
-	printf("%s\n",GeneratedVerbs[3]);
-}*/
+	int CurrentVerb = 0;
+	for (; CurrentVerb < AmountInputVerbs; CurrentVerb++)
+	printf("%s\n",GeneratedVerbs[CurrentVerb][3]);
+	printf("\n\n");
+}

@@ -12,10 +12,10 @@ int main()
    while(!Escape)
    {
       system("cls");
-      printf("1. Начать проверку\n");
-      printf("2. Таблица лидеров\n");
-      printf("3. Опции\n");
-      printf("4. Выход\n");
+      printf("1. Start checking\n");
+      printf("2. Leaders table\n");
+      printf("3. Options\n");
+      printf("4. Exit\n");
       SkipRewritingMenu:
       scanf("%d",&PressedKey);
       switch(PressedKey)
@@ -28,7 +28,7 @@ int main()
                  break;
          case 4: Escape = 1;
                  break;
-         default: printf("Неверная команда\n");
+         default: printf("Incorrect command\n");
                   goto SkipRewritingMenu;
 	  }
    }

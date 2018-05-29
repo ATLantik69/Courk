@@ -8,13 +8,13 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
    while(!Escape)
    {
       system("cls");
-      printf("Выберите, что вы хотите изменить\n");
-      printf("1. Режим ");
+      printf("Choose, what you would like to change\n");
+      printf("1. Mode ");
       if (*StandardGameMode)
       {
-         printf("стандартный\n");
-         printf("2. Количество выводимых на экран слов %d\n", *AmountInputVerbs);
-         printf("3. Вернуться в меню\n");
+         printf("Standard\n");
+         printf("2. Amount of output verbs %d\n", *AmountInputVerbs);
+         printf("3. Back to menu\n");
          SkipRewritingOptionsForStandardMode:
          scanf("%d",&PressedKey);
          switch(PressedKey)
@@ -25,16 +25,16 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
                     break;
             case 3: Escape = 1;
                     break;
-            default: printf("Неверная команда\n");
+            default: printf("Incorrect command\n");
                      goto SkipRewritingOptionsForStandardMode;
 	     }
       }
       else
       {
-         printf("на время\n");
-         printf("2. Время на ввод ответов %d\n" ,*LeftTime);
-         printf("3. Бонус времени за правильный ответ %d\n", *TimeBonus);
-         printf("4. Вернуться в меню\n");
+         printf("for time\n");
+         printf("2. Time to input asnwer %d\n" ,*LeftTime);
+         printf("3. Bonus time for correct answer %d\n", *TimeBonus);
+         printf("4. Back to menu\n");
          SkipRewritingOptionsForTimeMode:
          scanf("%d",&PressedKey);
          switch(PressedKey)
@@ -47,7 +47,7 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
                     break;
             case 4: Escape = 1;
                     break;
-            default: printf("Неверная команда\n");
+            default: printf("Incorrect command\n");
                      goto SkipRewritingOptionsForTimeMode;
 	     }
       }
@@ -57,11 +57,11 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
 int ChooseTime(int *LeftTime)
 {
    system("cls");
-   printf("Выберите время\n");
+   printf("Choose time\n");
    printf("1. 10\n");
    printf("2. 15\n");
    printf("3. 25\n");
-   printf("4. Назад в опции\n");
+   printf("4. Back to options\n");
    int PressedKey;
    SkipRewritingOptionsForLeftTime:
    scanf("%d", &PressedKey);
@@ -74,7 +74,7 @@ int ChooseTime(int *LeftTime)
       case 3: *LeftTime = 25;
               break;
       case 4: break;
-      default: printf("Неверная команда\n");
+      default: printf("Incorrect command\n");
                goto SkipRewritingOptionsForLeftTime;
 	}
 	return 1;
@@ -83,11 +83,11 @@ int ChooseTime(int *LeftTime)
 int ChooseBonusTime(int *TimeBonus)
 {
    system("cls");
-   printf("Выберите бонуснов время\n");
+   printf("Choose bonus time\n");
    printf("1. 2\n");
    printf("2. 4\n");
    printf("3. 6\n");
-   printf("4. Назад в опции\n");
+   printf("4. Back to options\n");
    int PressedKey;
    SkipRewritingOptionsForBonusTime:
    scanf("%d",&PressedKey);
@@ -100,7 +100,7 @@ int ChooseBonusTime(int *TimeBonus)
       case 3: *TimeBonus = 6;
               break;
       case 4: break;
-      default: printf("Неверная команда\n");
+      default: printf("Incorrect command\n");
                goto SkipRewritingOptionsForBonusTime;
 	}
 	return 1;  
@@ -109,11 +109,11 @@ int ChooseBonusTime(int *TimeBonus)
 int ChooseAmountInputVerbs(int *AmountInputVerbs)
 {
    system("cls");
-   printf("Выберите количество выводимых за раз глаголов\n");
+   printf("Choose amount of output verbs\n");
    printf("1. 1\n");
    printf("2. 2\n");
    printf("3. 3\n");
-   printf("4. Назад в опции\n");
+   printf("4. Back to options\n");
    int PressedKey;
    SkipRewritingOptionsForChooseAmountInputVerbs:
    scanf("%d", &PressedKey);
@@ -126,7 +126,7 @@ int ChooseAmountInputVerbs(int *AmountInputVerbs)
       case 3: *AmountInputVerbs = 3;
               break;
       case 4: break;
-      default: printf("Неверная команда\n");
+      default: printf("Incorrect command\n");
                goto SkipRewritingOptionsForChooseAmountInputVerbs;
 	}
 	return 1; 
