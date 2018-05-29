@@ -85,6 +85,7 @@ int BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGam
 		getchar(); //blank use in order to not skip pause
 		getchar();
 	}
+	return 0;
 }
 
 int EnterNickname(char Nickname[40], int Tests)
