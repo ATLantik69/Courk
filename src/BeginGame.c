@@ -35,7 +35,7 @@ int BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGam
 					goto BackToMenu; // Mark is in the end of function
 				}
 			}		 
-			EndTimeNote = (clock() - BeginTimeNote)/1000; //for Linux 10, for Windows 1000
+			EndTimeNote = (clock() - BeginTimeNote)/10; //for Linux 10, for Windows 1000
 			LeftTime -= (int) EndTimeNote;
 			Answer = CheckVerb(GeneratedVerbs[0], InputVerbs[0]);
 		}

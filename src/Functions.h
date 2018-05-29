@@ -17,6 +17,5 @@ int ChooseBonusTime(int *TimeBonus, int Tests, int PressedKey);
 int ChooseTime(int *LeftTime, int Tests, int PressedKey);
 int ChooseAmountInputVerbs(int *AmountInputVerbs, int Tests, int PressedKey);
 int EnterNickname(char Nickname[40], int Tests);
-void IdentifyVerbs(char InputString[180], char InputVerb[3][60]);
 
 #endif
