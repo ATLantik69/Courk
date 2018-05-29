@@ -7,6 +7,7 @@
 void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGameMode)
 {
    int Answer = -1; // Word haven't been entered
+   srand(time(0));
    float BeginTimeNote, EndTimeNote;
    char Nickname[40];
    int Score = 0; 

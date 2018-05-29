@@ -5,7 +5,6 @@
 void GenerateIrregularVerb(char GeneratedVerbs[4][60])
 {
    int i, j; // Variables for cycle
-   srand(time(0));
    int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0;
    int LetterNumber = 0;
    char CurrentLetter;
