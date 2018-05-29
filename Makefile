@@ -38,7 +38,7 @@ build/ShowPanel.o: src/ShowPanel.c src/Functions.h build
 build/TableFunctions.o: src/TableFunctions.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/TableFunctions.c -o build/TableFunctions.o
 
-build/maintest.o: test/maintest.c thirdparty/ctest.h src/Functions.h 
+build/maintest.o: test/maintest.c thirdparty/ctest.h src/Functions.h
 	$(CC) $(CFLAGS) -I thirdparty -I src -c test/maintest.c -o build/maintest.o
 
 build:
