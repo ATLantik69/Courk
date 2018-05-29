@@ -43,8 +43,8 @@ int ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amoun
 			if (!Tests)
 			{
 				printf("for time\n");
-				printf("2. Time to input asnwer %d\n" ,*LeftTime, PressedKey);
-				printf("3. Bonus time for correct answer %d\n", *TimeBonus, PressedKey);
+				printf("2. Time to input asnwer %d\n" ,*LeftTime);
+				printf("3. Bonus time for correct answer %d\n", *TimeBonus);
 				printf("4. Back to menu\n");
 				SkipRewritingOptionsForTimeMode:
 				scanf("%d", &PressedKey);
