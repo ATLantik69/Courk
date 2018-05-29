@@ -3,7 +3,7 @@ CFLAGS  = -Wall -Werror
 
 .PHONY: clean
 
-all: bin bin/IrregularVerbs bin/test build build/IrregularVerbs build/test default test
+all: bin bin/IrregularVerbs bin/test build default test
 
 default: bin/IrregularVerbs
 
