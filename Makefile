@@ -11,7 +11,7 @@ test: bin/test
 bin/IrregularVerbs: build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o bin
 	$(CC) $(CFLAGS) build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/IrregularVerbs
 
-bin/test: build/maintest.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.
+bin/test: build/maintest.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o
 	$(CC) $(CFLAGS) build/maintest.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/test
 
 build/main.o: src/main.c src/Functions.h build
