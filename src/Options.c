@@ -66,6 +66,8 @@ int ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amoun
 						goto SkipRewritingOptionsForTimeMode;
 			}
 		}
+		if (Tests)
+		break;
 	}
 	return 1;
 }
