@@ -11,7 +11,7 @@ int main()
    setlocale(LC_ALL, "Rus");
    while(!Escape)
    {
-      system("cls");
+      system("reset");
       printf("1. Start checking\n");
       printf("2. Leaders table\n");
       printf("3. Options\n");

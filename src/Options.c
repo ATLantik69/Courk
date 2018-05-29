@@ -7,7 +7,7 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
    int Escape = 0, PressedKey;
    while(!Escape)
    {
-      system("cls");
+      system("reset");
       printf("Choose, what you would like to change\n");
       printf("1. Mode ");
       if (*StandardGameMode)
@@ -56,7 +56,7 @@ void ShowOptions(int *LeftTime, int *TimeBonus, int *StandardGameMode, int *Amou
 
 int ChooseTime(int *LeftTime)
 {
-   system("cls");
+   system("reset");
    printf("Choose time\n");
    printf("1. 10\n");
    printf("2. 15\n");
@@ -82,7 +82,7 @@ int ChooseTime(int *LeftTime)
 
 int ChooseBonusTime(int *TimeBonus)
 {
-   system("cls");
+   system("reset");
    printf("Choose bonus time\n");
    printf("1. 2\n");
    printf("2. 4\n");
@@ -108,7 +108,7 @@ int ChooseBonusTime(int *TimeBonus)
 
 int ChooseAmountInputVerbs(int *AmountInputVerbs)
 {
-   system("cls");
+   system("reset");
    printf("Choose amount of output verbs\n");
    printf("1. 1\n");
    printf("2. 2\n");

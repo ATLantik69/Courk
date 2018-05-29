@@ -5,7 +5,7 @@
 void GenerateIrregularVerb(char GeneratedVerbs[4][60])
 {
    int i, j; // Variables for cycle
-   int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0;
+   int GeneratedString = rand()%5, StringNumber = 0, WordNumber = 0; // 5 - amount of verbs in .txt file
    int LetterNumber = 0;
    char CurrentLetter;
    for (i = 0; i < 4; i++)

@@ -16,7 +16,7 @@ void ShowTable()
 { 
    int PositionNumber = 0;
    struct GeneralPlayer PlayersMassive[10];
-   system("CLS");
+   system("reset");
    int PlayersAmount = SortTable(PlayersMassive);
    if (PlayersAmount == -1)
    printf("There were no games\n\n");
@@ -27,7 +27,9 @@ void ShowTable()
       printf("\n   %3d         %5d        %s",PositionNumber + 1 , PlayersMassive[PositionNumber].StructScore, PlayersMassive[PositionNumber].StructNickname);
       printf("\n\n");
    }
-   system("PAUSE");
+   printf("Press enter to continue\n");
+   getchar(); //blank use in order to not skip pause
+   getchar();
 }
 
 int SortTable(struct GeneralPlayer *PlayersMassive)

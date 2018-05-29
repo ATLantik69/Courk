@@ -13,7 +13,7 @@ void ShowPanelForTimeMode(char GeneratedVerbs[4][60], int Score, int LeftTime, i
 
 void ShowPanelForStandardMode(char GeneratedVerbs[3][4][60], int AmountInputVerbs)
 {
-	system("cls");
+	system("reset");
 	int CurrentVerb = 0;
 	for (; CurrentVerb < AmountInputVerbs; CurrentVerb++)
 	printf("%s\n",GeneratedVerbs[CurrentVerb][3]);

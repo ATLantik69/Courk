@@ -29,7 +29,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
             if (!(strcmp(InputVerbs[0][0],"esc")))
 	     	goto BackToMenu;
 		 }
-         EndTimeNote = (clock() - BeginTimeNote)/1000;
+         EndTimeNote = (clock() - BeginTimeNote)/10; //for Linux 10, for Windows 1000
          LeftTime -= (int) EndTimeNote;
          Answer = CheckVerb(GeneratedVerbs[0], InputVerbs[0]);
       }
@@ -64,9 +64,10 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
          }
       }
       printf("You mistook\n\n");
-      system("PAUSE");
    }
    BackToMenu:
    printf("Back to menu\n\n");
-   system("PAUSE");
+   printf("Press enter to continue\n");
+   getchar(); //blank use in order to not skip pause
+   getchar();
 }
