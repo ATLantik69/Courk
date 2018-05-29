@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void GenerateIrregularVerb(char GeneratedVerbs[4][30])
+void GenerateIrregularVerb(char GeneratedVerbs[4][60])
 {
    int i, j; // переменные для циклов
    srand(time(0));

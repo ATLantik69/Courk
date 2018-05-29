@@ -8,7 +8,7 @@ int main()
 {
    int Escape = 0, PressedKey, StandardGameMode = 0;
    int LeftTime = 15, TimeBonus = 6, AmountInputVerbs = 1;
-   setlocale(LC_ALL, "ru_RU.utf8");
+   setlocale(LC_ALL, "Rus");
    while(!Escape)
    {
       system("cls");

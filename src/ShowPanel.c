@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void ShowPanel(char GeneratedVerbs[4][30], int Score, int LeftTime, int Answer)
+void ShowPanelForTimeMode(char GeneratedVerbs[4][60], int Score, int LeftTime, int Answer)
 {
 	system("cls");
 	printf(" Очки   Осталось времени   Последнее слово было\n");

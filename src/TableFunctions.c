@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Functions.h"
 
-void AddNicknameToTable(char Nickname[20], int Score)
+void AddNicknameToTable(char Nickname[40], int Score)
 {
    strcpy(Player.StructNickname, Nickname);
    Player.StructScore = Score;

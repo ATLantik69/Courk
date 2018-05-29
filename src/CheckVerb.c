@@ -1,5 +1,5 @@
 
-int CheckVerb(char GeneratedWord[4][30], char InputVerbs[3][30])
+int CheckVerb(char GeneratedWord[4][60], char InputVerbs[3][60])
 {
    int i, j; // переменные для циклов
    for (i = 0; i < 3; i++)

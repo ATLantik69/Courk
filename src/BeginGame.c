@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 #include <string.h> 
 #include "Functions.h"
@@ -7,10 +8,10 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
 {
    int Answer = -1; // слово ещё не введено
    float BeginTimeNote, EndTimeNote;
-   char Nickname[20];
+   char Nickname[40];
    int Score = 0; 
    int CurrentVerb; // для циклов
-   char InputVerbs[3][30], GeneratedVerbs[3][4][30];
+   char InputVerbs[3][60], GeneratedVerbs[3][4][60];
    if (!StandardGameMode)
    {
       while(LeftTime > 0)
@@ -18,7 +19,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
          Score += AddScore(Answer, Score);
          LeftTime += AddTimeLeft(Answer, LeftTime, TimeBonus);
          GenerateIrregularVerb(GeneratedVerbs[0]);
-         ShowPanel(GeneratedVerbs[0], Score, LeftTime, Answer);
+         ShowPanelForTimeMode(GeneratedVerbs[0], Score, LeftTime, Answer);
          BeginTimeNote = clock();
          for (CurrentVerb = 0; CurrentVerb < 3; CurrentVerb++)
          scanf("%s", InputVerbs[CurrentVerb]);
@@ -36,7 +37,7 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
       }
       AddNicknameToTable(Nickname, Score); 
    }
-   /*else
+   else
    {
       while(Answer != 0)
       {
@@ -51,5 +52,5 @@ void BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGa
       }
    printf("Вы ошиблись\n\n");
    system("PAUSE");
-   }*/
+   }
 }
