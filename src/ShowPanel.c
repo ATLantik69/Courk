@@ -3,7 +3,7 @@
 
 void ShowPanelForTimeMode(char GeneratedVerbs[4][60], int Score, int LeftTime, int Answer)
 {
-	system("cls");
+	system("reset");
 	printf(" Score   Time left   Status of last word\n");
 	printf("%5.0d       %2.0d             ",Score,LeftTime);
 	if (Answer == 1) printf("Correct\n");
