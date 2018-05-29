@@ -1,7 +1,5 @@
 #define CTEST_MAIN
 
-#include <string.h>
-#include <stdio.h> 
 #include "Functions.h"
 #include "ctest.h"
 
