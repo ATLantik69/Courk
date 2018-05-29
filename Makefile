@@ -5,8 +5,14 @@ CFLAGS  = -Wall -Werror
 
 default: bin/IrregularVerbs
 
+test: bin/test
+	 bin/test
+
 bin/IrregularVerbs: build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o bin
 	$(CC) $(CFLAGS) build/main.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/IrregularVerbs
+
+bin/test: build/maintest.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.
+	$(CC) $(CFLAGS) build/maintest.o build/BeginGame.o build/ChangeVariables.o build/CheckVerb.o build/GenerateIrregularVerb.o build/Options.o build/ShowPanel.o build/TableFunctions.o -o bin/test
 
 build/main.o: src/main.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/main.c -o build/main.o
@@ -31,6 +37,9 @@ build/ShowPanel.o: src/ShowPanel.c src/Functions.h build
 
 build/TableFunctions.o: src/TableFunctions.c src/Functions.h build
 	$(CC) $(CFLAGS) -c src/TableFunctions.c -o build/TableFunctions.o
+
+build/maintest.o: test/maintest.c thirdparty/ctest.h src/Functions.h 
+	$(CC) $(CFLAGS) -I thirdparty -I src -c test/maintest.c -o build/maintest.o
 
 build:
 	mkdir build
