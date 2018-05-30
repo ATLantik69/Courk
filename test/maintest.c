@@ -384,7 +384,7 @@ CTEST (EnterNickname, CorrectInput) //Check return of EnterNickname in case inpu
 	ASSERT_EQUAL(expecting,result);
 }
 
-CTEST (BeginGame, EscapeFromTimeMode) //Check command escape from different mods
+CTEST (BeginGame, EscapeFromMode) //Check command escape from different mods
 {
 	StandardGameMode = 0;
 	char InputVerbs[3][3][60];
