@@ -60,13 +60,14 @@ int BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGam
 				{
 					for (CurrentWord = 0; CurrentWord < 3; CurrentWord++)
 					scanf("%s", InputVerbs[CurrentVerb][CurrentWord]);
+					if (!(strcmp(InputVerbs[0][0],"esc")))
+					{
+						if (Tests)
+						return 2;
+						goto BackToMenu; // Mark is in the end of function
+					}
 				}
-				if (!(strcmp(InputVerbs[0][0],"esc")))
-				{
-					if (Tests)
-					return 2;
-					goto BackToMenu; // Mark is in the end of function
-				}
+				
 			}
 			for (CurrentVerb = 0; CurrentVerb < AmountInputVerbs; CurrentVerb++)
 			{
