@@ -56,18 +56,15 @@ int BeginGame(int LeftTime, int TimeBonus, int AmountInputVerbs, int StandardGam
 			ShowPanelForStandardMode(GeneratedVerbs, AmountInputVerbs);
 			for (CurrentVerb = 0; CurrentVerb < AmountInputVerbs; CurrentVerb++)
 			{
+				for (CurrentWord = 0; CurrentWord < 3; CurrentWord++)
 				if (!Tests)
+				scanf("%s", InputVerbs[CurrentVerb][CurrentWord]);
+				if (!(strcmp(InputVerbs[0][0],"esc")))
 				{
-					for (CurrentWord = 0; CurrentWord < 3; CurrentWord++)
-					scanf("%s", InputVerbs[CurrentVerb][CurrentWord]);
-					if (!(strcmp(InputVerbs[0][0],"esc")))
-					{
-						if (Tests)
-						return 2;
-						goto BackToMenu; // Mark is in the end of function
-					}
+					if (Tests)
+					return 2;
+					goto BackToMenu; // Mark is in the end of function
 				}
-				
 			}
 			for (CurrentVerb = 0; CurrentVerb < AmountInputVerbs; CurrentVerb++)
 			{
